@@ -7,17 +7,12 @@ The goals / steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
 [image1]: ./writeup_images/model.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
+[image2]: ./writeup_images/original.jpg "Normal Image"
+[image3]: ./writeup_images/rec1.jpg "Recovery Image"
+[image4]: ./writeup_images/rec2.jpg "Recovery Image"
+[image5]: ./writeup_images/rec3.jpg "Recovery Image"
+[image6]: ./writeup_images/flipped.jpg "Flipped Image"
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
@@ -106,24 +101,20 @@ To capture good driving behavior, I first recorded two laps on track one using c
 
 ![alt text][image2]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to recover by itself in case it was driving out of the track. These images show what a recovery looks like starting from the right side:
 
 ![alt text][image3]
 ![alt text][image4]
 ![alt text][image5]
 
-Then I repeated this process on track two in order to get more data points.
+I then repeated this process going in the other direction in order to get more data points. I also did two laps focusing on driving very smoothly around the curves.
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+To augment the data set, I also flipped images and angles. This allowed me to double the data with no effort, which helped me combat overfiting. For example, here is the center lane driving image that I displayed before when flipped:
 
 ![alt text][image6]
-![alt text][image7]
 
-Etc ....
+After the collection process, I had 24384 data points. I then preprocessed this data by normalizing to a range of [-0.5,0.5] and by cropping 70 pixels from the top of the image and 25 pixels from the bottom, without changing the sides. 
 
-After the collection process, I had X number of data points. I then preprocessed this data by ...
+I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The number of epochs chosen was 6. I used an adam optimizer so that manually training the learning rate wasn't necessary.

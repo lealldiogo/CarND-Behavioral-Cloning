@@ -14,7 +14,8 @@ The goals / steps of this project are the following:
 [image5]: ./writeup_images/rec3.jpg "Recovery Image"
 [image6]: ./writeup_images/flipped.jpg "Flipped Image"
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
+
+Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 ### Files Submitted & Code Quality
@@ -103,9 +104,11 @@ To capture good driving behavior, I first recorded two laps on track one using c
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to recover by itself in case it was driving out of the track. These images show what a recovery looks like starting from the right side:
 
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
+![alt text][image3]|
+-------------------|
+![alt text][image4]|
+-------------------|
+![alt text][image5]|
 
 I then repeated this process going in the other direction in order to get more data points. I also did two laps focusing on driving very smoothly around the curves.
 
